@@ -102,3 +102,19 @@
 - 結果として、エンジニアの生産性向上
 
 これらは、私がこれまでの学習を通して、さまざまな`AI`や、メモツールを試した上で感じた課題に対してのアプローチです。
+
+## 参考文献/教材等
+
+- [Next.js|Docs](https://nextjs.org/docs)
+
+- [React|Docs](https://ja.react.dev/learn)
+
+- [TailwindCSS|Docs](https://tailwindcss.com/docs/installation)
+
+- [TypeScript|Docs](https://www.typescriptlang.org/docs/)
+
+- [Supabase|Docs](https://supabase.com/docs)
+
+- [Udemy【フォーム開発実践】認証やお問い合わせフォームを Next.js/RHF/zod 等のモダン技術を使って開発する実践講座](https://www.udemy.com/course/form-dev-with-nextjs-rhf-zod)
+
+- [Zenn|自作アプリ開発の要件メモ](https://zenn.dev/kei615ykhm/scraps/5b0226c07e9a1e)
