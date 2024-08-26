@@ -2,7 +2,7 @@
 
 ## 1. プロジェクト概要
 
-**LogicLoom**は、エンジニア向けのメモアプリケーションです。`Next.js`、`TypeScript`、`TailwindCSS`、`Vercel`、`Supabase`の実践的な使用方法を学習しながら開発を進めます。
+**LogicLoom**は、技術の学習目的で始めたエンジニア向けのメモアプリケーション開発です。`Next.js`、`TypeScript`、`TailwindCSS`、`Vercel`、`Supabase`の実践的な使用方法を学習しながら開発を進めます。
 
 **注意**: 本プロジェクトは段階的に実装を進めます。最初は`Next.js`の基礎的な機能を使用した小規模な実装から始め、徐々に機能を拡張していく予定です。
 
