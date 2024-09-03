@@ -1,3 +1,4 @@
 export const useMemos = () => {
-  return {};
+  const [memos, setMemos] = useState<Memo[]>([]);
+  return { memos };
 };
