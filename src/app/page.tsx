@@ -1,7 +1,7 @@
 "use client";
 
 // TODO: MemoFormとMemoListコンポーネントを作成する
-import { MemoForm } from "../components/MemoForm";
+import { MemoForm } from "../components/memos/MemoForm";
 import { MemoList } from "../components/MemoList";
 import { useMemos } from "../hooks/useMemos";
 
