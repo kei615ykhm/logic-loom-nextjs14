@@ -10,7 +10,11 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   const [content, setContent] = React.useState<string>("");
 
   // フォームの送信処理
-  const handleSubmit = (e: React.FormEvent) => {};
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // デフォルトの送信処理をキャンセル
+    onSubmit(content); // 親コンポーネントから渡されたonSubmit関数を実行
+    setContent(""); // 入力値をリセット
+  };
 
   return (
     // TODO: フォームの送信処理を実装する
