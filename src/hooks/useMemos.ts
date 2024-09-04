@@ -13,5 +13,9 @@ export const useMemos = () => {
     setMemos([...memos, newMemo]);
   };
 
-  return { memos, addMemo };
+  const deleteMemo = (id: string) => {
+    setMemos(memos.filter((memo) => memo.id !== id));
+  };
+
+  return { memos, addMemo, deleteMemo };
 };
