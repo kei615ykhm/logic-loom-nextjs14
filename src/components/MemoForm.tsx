@@ -20,8 +20,7 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    // TODO: フォームの送信処理を実装する
-    <form action="">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={content} // input要素の値をcontent状態と同期
