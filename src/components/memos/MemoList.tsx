@@ -1,7 +1,10 @@
 import React from "react";
 
-const MemoList = () => {
-  return <div>MemoList</div>;
+export const MemoList: React.FC = () => {
+  return (
+    <ul>
+      {/* メモのリストを表示 */}
+      <li>サンプルメモ</li>
+    </ul>
+  );
 };
-
-export default MemoList;
