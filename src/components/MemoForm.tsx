@@ -9,6 +9,9 @@ interface MemoFormProps {
 export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   const [content, setContent] = React.useState<string>("");
 
+  // フォームの送信処理
+  const handleSubmit = (e: React.FormEvent) => {};
+
   return (
     // TODO: フォームの送信処理を実装する
     <form action="">
