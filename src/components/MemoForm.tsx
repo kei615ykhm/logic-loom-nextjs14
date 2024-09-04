@@ -8,8 +8,8 @@ export const MemoForm: React.FC = () => {
     <form action="">
       <input
         type="text"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
+        value={content} // input要素の値をcontent状態と同期
+        onChange={(e) => setContent(e.target.value)} // 入力値が変更されたらcontent状態を更新
         placeholder="メモを入力"
       />
       <button type="submit">追加</button>
