@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
+// MemoFormProps型を定義
 interface MemoFormProps {
   onSubmit: (content: string) => void;
 }
 
+// MemoFormコンポーネントを定義
 export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   const [content, setContent] = React.useState<string>("");
 
