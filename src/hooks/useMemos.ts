@@ -4,7 +4,12 @@ import { Memo } from "../types";
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const storedMemos = localStorage.getItem("memos");
+    if (storedMemos) {
+      setMemos(JSON.parse(storedMemos));
+    }
+  }, []);
 
   const saveMemos = (updatedMemos: Memo[]) => {
     setMemos(updatedMemos);
