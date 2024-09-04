@@ -4,6 +4,11 @@ import { Memo } from "../types";
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
+  const saveMemos = (updatedMemos: Memo[]) => {
+    setMemos(updatedMemos);
+    localStorage.setItem("memos", JSON.stringify(updatedMemos));
+  };
+
   const addMemo = (content: string) => {
     const newMemo: Memo = {
       id: Date.now().toString(),
