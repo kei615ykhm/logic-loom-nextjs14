@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-export const MemoForm: React.FC = () => {
+interface MemoFormProps {
+  onsubmit: (content: string) => void;
+}
+
+export const MemoForm: React.FC<MemoFormProps> = ({ onsubmit }) => {
   const [content, setContent] = React.useState<string>("");
 
   return (
