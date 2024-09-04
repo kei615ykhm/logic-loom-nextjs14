@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const MemoForm: React.FC = () => {
+  const [content, setContent] = React.useState<string>("");
+
   return (
     // TODO: フォームの送信処理を実装する
     <form action="">
