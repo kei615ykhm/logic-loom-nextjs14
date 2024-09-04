@@ -7,7 +7,12 @@ export default function Home() {
 
   return (
     <div>
-      <button></button>
+      <button onClick={() => addMemo("テストメモ")}>メモを追加</button>
+      <ul>
+        {memos.map((memo) => (
+          <li key={memo.id}>{memo.content}</li>
+        ))}
+      </ul>
     </div>
   );
 }
