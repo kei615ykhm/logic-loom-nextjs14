@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Memo } from "../types";
 
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
+
+  useEffect(() => {}, []);
 
   const saveMemos = (updatedMemos: Memo[]) => {
     setMemos(updatedMemos);
