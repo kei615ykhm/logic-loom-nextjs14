@@ -4,4 +4,10 @@ import { useMemos } from "../hooks/useMemos";
 
 export default function Home() {
   const { memos, addMemo, deleteMemo } = useMemos();
+
+  return (
+    <div>
+      <button></button>
+    </div>
+  );
 }
