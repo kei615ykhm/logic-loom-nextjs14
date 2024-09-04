@@ -31,5 +31,3 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
     </form>
   );
 };
-
-export default MemoForm;
