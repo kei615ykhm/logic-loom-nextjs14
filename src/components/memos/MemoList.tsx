@@ -1,11 +1,13 @@
 import React, { memo } from "react";
 import { Memo } from "../../types";
 
+// MemoListPropsコンポーネントのプロパティの型定義
 interface MemoListProps {
-  memos: Memo[];
-  onDelete: (id: string) => void;
+  memos: Memo[]; // メモの配列
+  onDelete: (id: string) => void; // メモ削除のための関数
 }
 
+// MemoListコンポーネントを定義
 export const MemoList: React.FC<MemoListProps> = ({ memos }) => {
   return (
     <ul>
@@ -13,6 +15,7 @@ export const MemoList: React.FC<MemoListProps> = ({ memos }) => {
       {memos.map((memo) => (
         <li key={memo.id}>
           {memo.content}
+          {/* メモ削除ボタンを表示し、クリック時にonDelete関数を呼び出す */}
           <button onClick={() => onDelete(memo.id)}>削除</button>
         </li>
       ))}
