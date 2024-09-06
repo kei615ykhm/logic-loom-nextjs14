@@ -29,7 +29,7 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
       />
       <button
         type="submit"
-        className="ml-4 px-3 py-1 text-sm text-black hover:text-blue-700 focus:outline-none"
+        className="ml-4 px-4 py-2 text-sm text-white bg-blue-500 border border-blue-500 rounded hover:bg-blue-700 hover:border-blue-700 focus:outline-none"
       >
         追加
       </button>
