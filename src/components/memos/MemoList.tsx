@@ -13,7 +13,10 @@ export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
     <ul className="divide-y divide-gray-200">
       {/* メモのリストを表示 */}
       {memos.map((memo) => (
-        <li key={memo.id}>
+        <li
+          key={memo.id}
+          className="py-4 px-6 flex items-center justify-between hover:bg-gray-50"
+        >
           {memo.content}
           {/* メモ削除ボタンを表示し、クリック時にonDelete関数を呼び出す */}
           <button onClick={() => onDelete(memo.id)}>削除</button>
