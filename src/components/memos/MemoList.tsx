@@ -8,7 +8,7 @@ interface MemoListProps {
 }
 
 // MemoListコンポーネントを定義
-export const MemoList: React.FC<MemoListProps> = ({ memos }) => {
+export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
   return (
     <ul>
       {/* メモのリストを表示 */}
