@@ -3,6 +3,7 @@ import { Memo } from "../../types";
 
 interface MemoListProps {
   memos: Memo[];
+  onDelete: (id: string) => void;
 }
 
 export const MemoList: React.FC<MemoListProps> = ({ memos }) => {
