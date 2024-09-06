@@ -21,7 +21,7 @@ export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
           {/* メモ削除ボタンを表示し、クリック時にonDelete関数を呼び出す */}
           <button
             onClick={() => onDelete(memo.id)}
-            className="ml-4 px-3 py-1 text-sm text-red-500 hover:text-red-700 focus:outline-none"
+            className="ml-4 px-4 py-2 text-sm text-white bg-red-500 border border-red-500 rounded hover:bg-red-700 hover:border-red-700 focus:outline-none"
           >
             削除
           </button>
