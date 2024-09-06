@@ -10,7 +10,7 @@ interface MemoListProps {
 // MemoListコンポーネントを定義
 export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
   return (
-    <ul>
+    <ul className="divide-y divide-gray-200">
       {/* メモのリストを表示 */}
       {memos.map((memo) => (
         <li key={memo.id}>
