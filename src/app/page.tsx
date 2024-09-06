@@ -19,6 +19,11 @@ export default function Home() {
             <MemoForm onSubmit={addMemo} />
           </div>
         </div>
+        <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="p-6">
+            <MemoList memos={memos} onDelete={deleteMemo} />
+          </div>
+        </div>
       </main>
     </div>
   );
