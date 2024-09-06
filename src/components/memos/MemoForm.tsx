@@ -27,7 +27,12 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
         onChange={(e) => setContent(e.target.value)} // 入力値が変更されたらcontent状態を更新
         placeholder="メモを入力"
       />
-      <button type="submit">追加</button>
+      <button
+        type="submit"
+        className="ml-4 px-3 py-1 text-sm text-black hover:text-blue-700 focus:outline-none"
+      >
+        追加
+      </button>
     </form>
   );
 };
