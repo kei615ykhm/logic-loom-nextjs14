@@ -18,7 +18,10 @@ export const useMemos = () => {
 
   // メモの状態が更新されたらローカルストレージに保存
   useEffect(() => {
-    localStorage.setItem("memos", JSON.stringify(memos));
+    if (typeof window === "undefined") {
+      // サーバーサイドではローカルストレージにアクセスできないため、処理をスキップ
+      localStorage.setItem("memos", JSON.stringify(memos));
+    }
   }, [memos]);
 
   // 新しいメモを追加する関数
