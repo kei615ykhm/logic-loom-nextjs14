@@ -4,13 +4,17 @@ import { Memo } from "../types";
 // メモの状態を管理するカスタムフック
 export const useMemos = () => {
   // メモの状態と更新関数を定義し、初期値をローカルストレージから取得
-  const [memos, setMemos] = useState<Memo[]>(() => {
+  const [memos, setMemos] = useState<Memo[]>([]);
+
+  // クライアントサイドでのローカルストレージからメモを取得
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const storedMemos = localStorage.getItem("memos");
-      return storedMemos ? JSON.parse(storedMemos) : [];
+      if (storedMemos) {
+        setMemos(JSON.parse(storedMemos));
+      }
     }
-    return [];
-  });
+  }, []);
 
   // メモの状態が更新されたらローカルストレージに保存
   useEffect(() => {
