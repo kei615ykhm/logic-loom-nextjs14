@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Memo } from "../types";
 
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
-  // 初回レンダリング時にlocalStorageからメモを取得
+  // 初回レンダリング時にローカルストレージからメモを読み込む
   useEffect(() => {
     const storedMemos = localStorage.getItem("memos");
     if (storedMemos) {
@@ -12,10 +12,10 @@ export const useMemos = () => {
     }
   }, []);
 
-  const saveMemos = (updatedMemos: Memo[]) => {
-    setMemos(updatedMemos);
-    localStorage.setItem("memos", JSON.stringify(updatedMemos));
-  };
+  // メモの状態が変更されるたびにローカルストレージを更新
+  useEffect(() => {
+    localStorage.setItem("memos", JSON.stringify(memos));
+  }, [memos]);
 
   const addMemo = (content: string) => {
     const newMemo: Memo = {
@@ -23,11 +23,11 @@ export const useMemos = () => {
       content,
       createdAt: new Date().toISOString(),
     };
-    setMemos([...memos, newMemo]);
+    setMemos((prevMemos) => [...prevMemos, newMemo]);
   };
 
   const deleteMemo = (id: string) => {
-    setMemos(memos.filter((memo) => memo.id !== id));
+    setMemos((prevMemos) => prevMemos.filter((memo) => memo.id !== id));
   };
 
   return { memos, addMemo, deleteMemo };
