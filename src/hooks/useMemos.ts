@@ -4,6 +4,7 @@ import { Memo } from "../types";
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
+  // 初回レンダリング時にlocalStorageからメモを取得
   useEffect(() => {
     const storedMemos = localStorage.getItem("memos");
     if (storedMemos) {
