@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Memo } from "../../types";
 
 // MemoListPropsコンポーネントのプロパティの型定義
