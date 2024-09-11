@@ -14,7 +14,7 @@ export const useMemo = () => {
   }, []);
 
   // メモを追加する関数
-  const addMemo = (content: string) => {
+  const handleAddMemo = (content: string) => {
     const newMemo: Memo = {
       id: Date.now().toString(),
       content,
@@ -29,5 +29,5 @@ export const useMemo = () => {
   };
 
   // メモの状態と操作用関数を返す
-  return { memos, addMemo, deleteMemo };
+  return { memos, handleAddMemo, deleteMemo };
 };

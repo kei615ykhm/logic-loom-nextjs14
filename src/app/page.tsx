@@ -5,7 +5,7 @@ import { MemoList } from "../components/memos/MemoList";
 import { useMemo } from "../hooks/useMemos";
 
 export default function Home() {
-  const { memos, addMemo, deleteMemo } = useMemo();
+  const { memos, handleAddMemo, deleteMemo } = useMemo();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white py-8">
@@ -15,7 +15,7 @@ export default function Home() {
         </h1>
         <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
           <div className="p-6">
-            <MemoForm onSubmit={addMemo} />
+            <MemoForm onSubmit={handleAddMemo} />
           </div>
         </div>
         <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5">
