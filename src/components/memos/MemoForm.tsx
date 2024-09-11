@@ -34,12 +34,23 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {/**
+       * メモ入力用のテキストフィールド
+       * @remarks
+       * - `value`: input要素の値をcontent状態と同期
+       * - `onChange`: 入力値が変更されたらcontent状態を更新
+       */}
       <input
         type="text"
-        value={content} // input要素の値をcontent状態と同期
-        onChange={(e) => setContent(e.target.value)} // 入力値が変更されたらcontent状態を更新
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
         placeholder="メモを入力"
       />
+      {/**
+       * メモ追加ボタン
+       * @remarks
+       * - `type="submit"`: フォームの送信をトリガー
+       */}
       <button
         type="submit"
         className="ml-4 px-4 py-2 text-sm text-white bg-blue-500 border border-blue-500 rounded hover:bg-blue-700 hover:border-blue-700 focus:outline-none"
