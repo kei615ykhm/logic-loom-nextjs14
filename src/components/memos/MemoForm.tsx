@@ -9,20 +9,27 @@ interface MemoFormProps {
   onSubmit: (content: string) => void;
 }
 
-// MemoFormコンポーネントを定義
+/**
+ * メモを入力するためのフォームコンポーネント
+ * @param props - コンポーネントのプロパティ
+ * @param props.onSubmit - フォーム送信時に呼び出される関数
+ */
 export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
+  /** メモの内容を管理するstate */
   const [content, setContent] = React.useState<string>("");
 
-  // フォームの送信処理
+  /**
+   * フォームの送信を処理する関数
+   * @param e - フォーム送信イベント
+   */
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // デフォルトの送信処理をキャンセル
+    e.preventDefault();
     const trimmedContent = content.trim();
     if (trimmedContent.length < 1) {
-      // 入力された文字が1文字もない場合は何もせず早期リターン
       return;
     }
-    onSubmit(trimmedContent); // 親コンポーネントから渡されたonSubmit関数を実行
-    setContent(""); // 入力値をリセット
+    onSubmit(trimmedContent);
+    setContent("");
   };
 
   return (
