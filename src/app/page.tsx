@@ -5,7 +5,7 @@ import { MemoList } from "../components/memos/MemoList";
 import { useMemo } from "../hooks/useMemos";
 
 export default function Home() {
-  const { memos, handleAddMemo, deleteMemo } = useMemo();
+  const { memos, handleAddMemo, handleDeleteMemo } = useMemo();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white py-8">
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         <div className="max-w-xl mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-5">
           <div className="p-6">
-            <MemoList memos={memos} onDelete={deleteMemo} />
+            <MemoList memos={memos} onDelete={handleDeleteMemo} />
           </div>
         </div>
       </main>

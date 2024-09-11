@@ -24,10 +24,10 @@ export const useMemo = () => {
   };
 
   // 指定したIDのメモを削除する関数
-  const deleteMemo = (id: string) => {
+  const handleDeleteMemo = (id: string) => {
     setMemos(memos.filter((memo) => memo.id !== id));
   };
 
   // メモの状態と操作用関数を返す
-  return { memos, handleAddMemo, deleteMemo };
+  return { memos, handleAddMemo, handleDeleteMemo };
 };
