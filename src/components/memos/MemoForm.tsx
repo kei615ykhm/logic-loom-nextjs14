@@ -12,11 +12,13 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   // フォームの送信処理
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // デフォルトの送信処理をキャンセル
-    if (content.trim()) {
-      // 入力値が空のみである場合は何もせず処理を終了
-      onSubmit(content); // 親コンポーネントから渡されたonSubmit関数を実行
-      setContent(""); // 入力値をリセット
+    const Content = content.trim();
+    if (Content.length < 1) {
+      // 入力された文字が1文字もない場合は何もせず早期リターン
+      return;
     }
+    onSubmit(content); // 親コンポーネントから渡されたonSubmit関数を実行
+    setContent(""); // 入力値をリセット
   };
 
   return (
