@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Memo } from "../types";
 
 // メモの状態を管理するカスタムフック
-export const useMemo = () => {
+export const useMemoManager = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
   // クライアントサイドでのみローカルストレージにメモを保存

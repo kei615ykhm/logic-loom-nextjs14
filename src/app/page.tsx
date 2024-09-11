@@ -2,10 +2,10 @@
 
 import { MemoForm } from "../components/memos/MemoForm";
 import { MemoList } from "../components/memos/MemoList";
-import { useMemo } from "../hooks/useMemos";
+import { useMemoManager } from "../hooks/useMemoManager";
 
 export default function Home() {
-  const { memos, handleAddMemo, handleDeleteMemo } = useMemo();
+  const { memos, handleAddMemo, handleDeleteMemo } = useMemoManager();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white py-8">
