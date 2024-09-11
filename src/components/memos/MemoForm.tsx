@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
-// MemoFormProps型を定義
+/** MemoFormコンポーネントのプロパティの型定義 */
 interface MemoFormProps {
+  /**
+   * フォーム送信時に呼び出される関数
+   * @param content 送信されたメモの内容
+   */
   onSubmit: (content: string) => void;
 }
 
