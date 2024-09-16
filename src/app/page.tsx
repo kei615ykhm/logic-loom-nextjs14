@@ -1,6 +1,6 @@
 "use client";
 
-import { MemoForm } from "../components/memos/MemoForm";
+import MemoForm from "../components/memos/MemoForm";
 import { MemoList } from "../components/memos/MemoList";
 import { useMemoManager } from "../hooks/useMemoManager";
 
