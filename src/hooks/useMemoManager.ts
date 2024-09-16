@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { Memo } from "../types";
 
-// メモの状態を管理するカスタムフック
+/**
+ * メモの状態を管理するカスタムフック
+ * @returns {object} メモの状態と操作用関数を含むオブジェクト
+ * @returns {Memo[]} memos - 現在のメモのリスト
+ * @returns {function} handleAddMemo - メモを追加する関数
+ * @returns {function} handleDeleteMemo - 指定したIDのメモを削除する関数
+ */
 export const useMemoManager = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
