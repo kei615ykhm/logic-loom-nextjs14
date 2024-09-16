@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 interface MemoFormProps {
   onSubmit: (content: string) => void;
@@ -10,15 +10,18 @@ export default function MemoForm({
 }: MemoFormProps): React.ReactElement {
   const [content, setContent] = React.useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmedContent = content.trim();
-    if (trimmedContent.length < 1) {
-      return;
-    }
-    onSubmit(trimmedContent);
-    setContent("");
-  };
+  const handleSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      const trimmedContent = content.trim();
+      if (trimmedContent.length < 1) {
+        return;
+      }
+      onSubmit(trimmedContent);
+      setContent("");
+    },
+    [content, onSubmit]
+  );
 
   return (
     <form onSubmit={handleSubmit}>
