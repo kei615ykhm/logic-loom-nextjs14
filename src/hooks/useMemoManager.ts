@@ -19,7 +19,16 @@ export const useMemoManager = () => {
       storedMemos !== null &&
       storedMemos !== ""
     ) {
-      setMemos(JSON.parse(storedMemos));
+      try {
+        const parsedMemos = JSON.parse(storedMemos);
+        if (Array.isArray(parsedMemos)) {
+          setMemos(parsedMemos);
+        } else {
+          console.error("保存されたメモが配列ではありません");
+        }
+      } catch (error) {
+        console.error("保存されたメモの解析に失敗しました:", error);
+      }
     }
   }, []);
 
