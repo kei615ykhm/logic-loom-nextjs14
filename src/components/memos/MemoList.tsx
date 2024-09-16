@@ -6,6 +6,7 @@ interface MemoListProps {
 }
 
 export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
+  /** メモ削除のためのコールバック関数 */
   return (
     <ul className="divide-y divide-gray-200">
       {memos.map((memo) => (
