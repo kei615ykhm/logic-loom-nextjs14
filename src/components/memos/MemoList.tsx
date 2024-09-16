@@ -1,23 +1,10 @@
 import React from "react";
 import { Memo } from "../../types";
-
-/** MemoListコンポーネントのプロパティの型定義 */
 interface MemoListProps {
-  /** メモの配列 */
   memos: Memo[];
-  /**
-   * メモ削除のための関数
-   * @param id 削除するメモのID
-   */
   onDelete: (id: string) => void;
 }
 
-/**
- * メモのリストを表示し、各メモの削除機能を提供するコンポーネント
- * @param props - コンポーネントのプロパティ
- * @param props.memos - 表示するメモの配列
- * @param props.onDelete - メモを削除するための関数
- */
 export const MemoList: React.FC<MemoListProps> = ({ memos, onDelete }) => {
   return (
     <ul className="divide-y divide-gray-200">
