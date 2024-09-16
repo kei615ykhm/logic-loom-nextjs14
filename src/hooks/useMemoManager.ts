@@ -19,7 +19,10 @@ export const useMemoManager = () => {
     }
   }, []);
 
-  // メモを追加する関数
+  /**
+   * メモを追加する関数
+   * @param {string} content - 追加するメモの内容
+   */
   const handleAddMemo = (content: string) => {
     const newMemo: Memo = {
       id: Date.now().toString(),
