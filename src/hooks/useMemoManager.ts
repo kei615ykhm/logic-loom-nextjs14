@@ -14,7 +14,11 @@ export const useMemoManager = () => {
   /** 初回レンダリング時にローカルストレージからメモを取得し、状態を更新する */
   useEffect(() => {
     const storedMemos = localStorage.getItem("memos");
-    if (storedMemos) {
+    if (
+      storedMemos !== undefined &&
+      storedMemos !== null &&
+      storedMemos !== ""
+    ) {
       setMemos(JSON.parse(storedMemos));
     }
   }, []);
