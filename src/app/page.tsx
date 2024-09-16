@@ -4,7 +4,7 @@ import { MemoForm } from "../components/memos/MemoForm";
 import { MemoList } from "../components/memos/MemoList";
 import { useMemoManager } from "../hooks/useMemoManager";
 
-export default function Home() {
+function Home() {
   const { memos, handleAddMemo, handleDeleteMemo } = useMemoManager();
 
   return (
@@ -27,3 +27,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
