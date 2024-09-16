@@ -5,7 +5,9 @@ interface MemoFormProps {
 }
 
 /** フォーム送信時に呼び出されるコールバック関数 */
-export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
+export default function MemoForm({
+  onSubmit,
+}: MemoFormProps): React.ReactElement {
   const [content, setContent] = React.useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,4 +36,4 @@ export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
       </button>
     </form>
   );
-};
+}
