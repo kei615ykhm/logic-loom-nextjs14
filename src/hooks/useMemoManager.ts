@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { Memo } from "../types";
 
+// TODO: zodをインポートして、Memoスキーマを定義する
+// import { z } from "zod";
+// const MemoSchema = z.object({
+//   id: z.string(),
+//   content: z.string(),
+//   createdAt: z.string().datetime()
+// });
+
 /**
  * メモの状態を管理するカスタムフック
  * @returns {object} メモの状態と操作用関数を含むオブジェクト
