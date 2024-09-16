@@ -40,6 +40,5 @@ export const useMemoManager = () => {
     setMemos(memos.filter((memo) => memo.id !== id));
   };
 
-  // メモの状態と操作用関数を返す
   return { memos, handleAddMemo, handleDeleteMemo };
 };
