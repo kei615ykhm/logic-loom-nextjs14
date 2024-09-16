@@ -53,6 +53,8 @@ export const useMemoManager = () => {
       content,
       createdAt: new Date().toISOString(),
     };
+    // TODO: zodを使用して新しいメモをバリデーションする
+    // const validatedMemo = MemoSchema.parse(newMemo);
     setMemos([...memos, newMemo]);
   };
 
