@@ -30,6 +30,9 @@ export const useMemoManager = () => {
       try {
         const parsedMemos = JSON.parse(storedMemos);
         if (Array.isArray(parsedMemos)) {
+          // TODO: zodを使用してパースとバリデーションを行う
+          // const validatedMemos = z.array(MemoSchema).parse(parsedMemos);
+          // setMemos(validatedMemos);
           setMemos(parsedMemos);
         } else {
           console.error("保存されたメモが配列ではありません");
