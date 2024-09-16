@@ -4,6 +4,7 @@ interface MemoFormProps {
   onSubmit: (content: string) => void;
 }
 
+/** フォーム送信時に呼び出されるコールバック関数 */
 export const MemoForm: React.FC<MemoFormProps> = ({ onSubmit }) => {
   const [content, setContent] = React.useState<string>("");
 
