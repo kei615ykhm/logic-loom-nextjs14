@@ -11,7 +11,7 @@ import { Memo } from "../types";
 export const useMemoManager = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
-  // クライアントサイドでのみローカルストレージにメモを保存
+  /** 初回レンダリング時にローカルストレージからメモを取得し、状態を更新する */
   useEffect(() => {
     const storedMemos = localStorage.getItem("memos");
     if (storedMemos) {
