@@ -32,7 +32,10 @@ export const useMemoManager = () => {
     setMemos([...memos, newMemo]);
   };
 
-  // 指定したIDのメモを削除する関数
+  /**
+   * 指定したIDのメモを削除する関数
+   * @param {string} id - 削除するメモのID
+   */
   const handleDeleteMemo = (id: string) => {
     setMemos(memos.filter((memo) => memo.id !== id));
   };
