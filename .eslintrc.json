@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",  // Next.js向けのESLintルール
+    "plugin:@typescript-eslint/recommended",  // TypeScript向けのESLintルール
+    "plugin:prettier/recommended"  // Prettierとの競合を防ぐ設定
+  ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",  // PrettierのルールをESLintでエラーとして扱う
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-explicit-any": "warn"
+  }
 }
