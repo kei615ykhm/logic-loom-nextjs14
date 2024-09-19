@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import MemoForm from "../components/memos/MemoForm";
-import { MemoList } from "../components/memos/MemoList";
-import { useMemoManager } from "../hooks/useMemoManager";
+import MemoForm from '../components/memos/MemoForm';
+import { MemoList } from '../components/memos/MemoList';
+import { useMemoManager } from '../hooks/useMemoManager';
 
 function Home() {
   const { memos, handleAddMemo, handleDeleteMemo } = useMemoManager();

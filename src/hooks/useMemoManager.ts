@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Memo } from "../types";
+import { useEffect, useState } from 'react';
+import { Memo } from '../types';
 
 // TODO: zodをインポートして、Memoスキーマを定義する
 // import { z } from "zod";
@@ -21,11 +21,11 @@ export const useMemoManager = () => {
 
   /** 初回レンダリング時にローカルストレージからメモを取得し、状態を更新する */
   useEffect(() => {
-    const storedMemos = localStorage.getItem("memos");
+    const storedMemos = localStorage.getItem('memos');
     if (
       storedMemos !== undefined &&
       storedMemos !== null &&
-      storedMemos !== ""
+      storedMemos !== ''
     ) {
       try {
         const parsedMemos = JSON.parse(storedMemos);
@@ -35,10 +35,10 @@ export const useMemoManager = () => {
           // setMemos(validatedMemos);
           setMemos(parsedMemos);
         } else {
-          console.error("保存されたメモが配列ではありません");
+          console.error('保存されたメモが配列ではありません');
         }
       } catch (error) {
-        console.error("保存されたメモの解析に失敗しました:", error);
+        console.error('保存されたメモの解析に失敗しました:', error);
       }
     }
   }, []);
