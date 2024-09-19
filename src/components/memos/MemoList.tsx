@@ -1,5 +1,5 @@
-import React from "react";
-import { Memo } from "../../types";
+import React from 'react';
+import { Memo } from '../../types';
 interface MemoListProps {
   memos: Memo[];
   onDelete: (id: string) => void;
