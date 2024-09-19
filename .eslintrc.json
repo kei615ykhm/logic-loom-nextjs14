@@ -8,10 +8,18 @@
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/consistent-type-assertions": "error",
+    "@typescript-eslint/consistent-type-assertions": [
+      "error",
+      {
+        "assertionStyle": "never",
+        "objectLiteralTypeAssertions": "never"
+      }
+    ],
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "argsIgnorePattern": "^_" }
+      {
+        "argsIgnorePattern": "^_"
+      }
     ]
   }
 }
