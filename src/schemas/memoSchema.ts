@@ -5,3 +5,5 @@ export const memoSchema = z.object({
   content: z.string(),
   createdAt: z.string(),
 });
+
+export type Memo = z.infer<typeof memoSchema>;
