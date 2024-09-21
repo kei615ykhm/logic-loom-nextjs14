@@ -23,6 +23,7 @@ export const useMemoManager = () => {
         const parsedMemos = JSON.parse(storedMemos);
         if (Array.isArray(parsedMemos)) {
           // TODO: zodを使用してパースとバリデーションを行う
+          const memoArraySchema = z.array(memoSchema);
           // const validatedMemos = z.array(MemoSchema).parse(parsedMemos);
           // setMemos(validatedMemos);
           setMemos(parsedMemos);
