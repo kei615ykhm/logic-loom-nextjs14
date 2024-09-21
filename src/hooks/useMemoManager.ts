@@ -21,7 +21,7 @@ export const useMemoManager = () => {
       storedMemos !== ''
     ) {
       try {
-        const parsedMemos = JSON.parse(storedMemos);
+        const parsedMemos: Memo[] = JSON.parse(storedMemos);
         if (Array.isArray(parsedMemos)) {
           const memoArraySchema = z.array(memoSchema);
           /** NOTE: 保存機能を実装していないため、バリデーションをスキップしている */
