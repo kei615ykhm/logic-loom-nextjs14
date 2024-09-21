@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Memo } from '../types';
+import { Memo } from '../schemas/memoSchema';
 
 // TODO: zodをインポートして、Memoスキーマを定義する
 // import { z } from "zod";
