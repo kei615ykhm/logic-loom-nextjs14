@@ -40,7 +40,7 @@ export const useMemoManager = () => {
    * @param {string} content - 追加するメモの内容
    */
   const handleAddMemo = (content: string) => {
-    const newMemo: Memo = {
+    const newMemoData: Memo = {
       id: Date.now().toString(),
       content,
       createdAt: new Date().toISOString(),
@@ -48,7 +48,7 @@ export const useMemoManager = () => {
 
     try {
       /** zodを使用して新しいメモをバリデーションする */
-      const validatedMemo = memoSchema.parse(newMemo);
+      const validatedMemo = memoSchema.parse(newMemoData);
       setMemos([...memos, validatedMemo]);
     } catch (error) {
       console.error('メモのバリデーションに失敗しました:', error);
