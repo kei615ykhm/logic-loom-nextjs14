@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Memo } from '../schemas/memoSchema';
+import { Memo, memoSchema } from '../schemas/memoSchema';
+import { z } from 'zod';
 
 /**
  * メモの状態を管理するカスタムフック
