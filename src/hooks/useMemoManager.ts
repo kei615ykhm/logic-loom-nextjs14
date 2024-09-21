@@ -47,6 +47,7 @@ export const useMemoManager = () => {
     };
 
     try {
+      /** zodを使用して新しいメモをバリデーションする */
       const validatedMemo = memoSchema.parse(newMemo);
       setMemos([...memos, validatedMemo]);
     } catch (error) {
