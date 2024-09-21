@@ -45,6 +45,7 @@ export const useMemoManager = () => {
       content,
       createdAt: new Date().toISOString(),
     };
+
     try {
       const validatedMemo = memoSchema.parse(newMemo);
       setMemos([...memos, validatedMemo]);
