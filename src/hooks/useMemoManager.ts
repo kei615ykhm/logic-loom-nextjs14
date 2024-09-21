@@ -47,7 +47,12 @@ export const useMemoManager = () => {
     };
     // TODO: zodを使用して新しいメモをバリデーションする
     // const validatedMemo = MemoSchema.parse(newMemo);
-    setMemos([...memos, newMemo]);
+    try {
+      const validatedMemo = memoSchema.parse(newMemo);
+      setMemos([...memos, validatedMemo]);
+    } catch (error) {
+      console.error('メモのバリデーションに失敗しました:', error);
+    }
   };
 
   /**
