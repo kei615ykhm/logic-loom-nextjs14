@@ -22,13 +22,10 @@ export const useMemoManager = () => {
     ) {
       try {
         const parsedMemos: unknown = JSON.parse(storedMemos);
-          const memoArraySchema = z.array(memoSchema);
-          /** NOTE: 保存機能を実装していないため、バリデーションをスキップしている */
-          const validatedMemos:Memo[] = memoArraySchema.parse(parsedMemos);
-          setMemos(validatedMemos);
-        } else {
-          console.error('保存されたメモが配列ではありません');
-        }
+        const memoArraySchema = z.array(memoSchema);
+        /** NOTE: 保存機能を実装していないため、バリデーションをスキップしている */
+        const validatedMemos: Memo[] = memoArraySchema.parse(parsedMemos);
+        setMemos(validatedMemos);
       } catch (error) {
         console.error('保存されたメモの解析に失敗しました:', error);
       }
