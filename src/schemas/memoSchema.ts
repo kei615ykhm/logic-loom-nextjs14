@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-/** WARNING: 予期しないデータがスキーマにマッチしてしまう可能性がある */
 export const memoSchema = z
   .object({
     id: z.string().uuid({ message: 'IDは有効なUUIDである必要があります' }),
