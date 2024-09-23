@@ -24,8 +24,8 @@ export const useMemoManager = () => {
         const parsedMemos: unknown = JSON.parse(storedMemos);
           const memoArraySchema = z.array(memoSchema);
           /** NOTE: 保存機能を実装していないため、バリデーションをスキップしている */
-          const validatedMemos = memoArraySchema.parse(parsedMemos);
-          setMemos(parsedMemos);
+          const validatedMemos:Memo[] = memoArraySchema.parse(parsedMemos);
+          setMemos(validatedMemos);
         } else {
           console.error('保存されたメモが配列ではありません');
         }
