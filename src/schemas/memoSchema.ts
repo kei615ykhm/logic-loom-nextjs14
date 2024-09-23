@@ -3,7 +3,7 @@ import { z } from 'zod';
 /** WARNING: 予期しないデータがスキーマにマッチしてしまう可能性がある */
 export const memoSchema = z.object({
   /** WARNING: 無効なID形式の文字列を許容してしまう */
-  id: z.string(),
+  id: z.string().uuid({ message: 'IDは有効なUUIDである必要があります' }),
   content: z.string().min(1, { message: 'メモの内容が空です' }),
   /** NOTE: ローカルストレージでは日付が文字列として保存されるためz.date()を不使用 */
   createdAt: z.string().refine((date) => !isNaN(Date.parse(date)), {
