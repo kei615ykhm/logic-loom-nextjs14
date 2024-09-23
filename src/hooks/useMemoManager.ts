@@ -46,6 +46,8 @@ export const useMemoManager = () => {
       /** zodを使用して新しいメモをバリデーションする */
       const validatedMemo: Memo = memoSchema.parse(newMemoData);
       setMemos((prevMemos) => [...prevMemos, validatedMemo]);
+      /** ローカルストレージに保存 */
+      localStorage.setItem('memos', JSON.stringify([...memos, validatedMemo]));
     } catch (error) {
       console.error('メモのバリデーションに失敗しました:', error);
     }
