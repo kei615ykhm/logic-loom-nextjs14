@@ -7,7 +7,9 @@ export const memoSchema = z.object({
   /** WARNING: 空文字列や不要なスペースのみの文字列が許容される可能性がある */
   content: z.string(),
   /** WARNING: 無効な日付形式の文字列を許容してしまう */
-  createdAt: z.string(),
+  createdAt: z.string().refine((date) => !isNaN(Date.parse(date)), {
+    message: '無効な日付形式です',
+  }),
 });
 
 export type Memo = z.infer<typeof memoSchema>;
