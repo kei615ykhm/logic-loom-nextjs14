@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Memo, memoSchema } from '../schemas/memoSchema';
 import { z } from 'zod';
+import { v4 } from 'uuid';
 
 /**
  * メモの状態を管理するカスタムフック
@@ -37,7 +38,7 @@ export const useMemoManager = () => {
    */
   const handleAddMemo = (content: string) => {
     const newMemoData: Memo = {
-      id: Date.now().toString(),
+      id: v4(),
       content,
       createdAt: new Date().toISOString(),
     };
