@@ -62,10 +62,7 @@ export const useMemoManager = () => {
     const updatedMemos = memos.filter((memo) => memo.id !== id);
     setMemos(updatedMemos);
     /** ローカルストレージに削除情報を保存 */
-    localStorage.setItem(
-      'memos',
-      JSON.stringify(memos.filter((memo) => memo.id !== id))
-    );
+    localStorage.setItem('memos', JSON.stringify(updatedMemos));
   };
 
   return { memos, handleAddMemo, handleDeleteMemo };
