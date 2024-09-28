@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+//** 基本的なメモスキーマ */
 export const memoSchema = z
   .object({
     id: z.string().uuid({ message: 'IDは有効なUUIDである必要があります。' }),
@@ -12,6 +13,7 @@ export const memoSchema = z
 
 export type Memo = z.infer<typeof memoSchema>;
 
+//** メモの作成時のスキーマ */
 export const createMemoSchema = z.object({
   content: z
     .string()
