@@ -21,4 +21,4 @@ export const createMemoSchema = z.object({
     .max(1000, { message: '内容は最大1000文字までです。' }),
 });
 
-export type CreateMemo = z.infer<typeof createMemoSchema>;
+export type CreateMemoInput = z.infer<typeof createMemoSchema>;
