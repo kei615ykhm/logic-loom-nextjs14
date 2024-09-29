@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Memo } from '../types';
-
-// TODO: zodをインポートして、Memoスキーマを定義する
-// import { z } from "zod";
-// const MemoSchema = z.object({
-//   id: z.string(),
-//   content: z.string(),
-//   createdAt: z.string().datetime()
-// });
+import { Memo, memoSchema } from '../schemas/memoSchema';
+import { z } from 'zod';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * メモの状態を管理するカスタムフック
@@ -28,15 +22,10 @@ export const useMemoManager = () => {
       storedMemos !== ''
     ) {
       try {
-        const parsedMemos = JSON.parse(storedMemos);
-        if (Array.isArray(parsedMemos)) {
-          // TODO: zodを使用してパースとバリデーションを行う
-          // const validatedMemos = z.array(MemoSchema).parse(parsedMemos);
-          // setMemos(validatedMemos);
-          setMemos(parsedMemos);
-        } else {
-          console.error('保存されたメモが配列ではありません');
-        }
+        const parsedMemos: unknown = JSON.parse(storedMemos);
+        const memoArraySchema = z.array(memoSchema);
+        const validatedMemos: Memo[] = memoArraySchema.parse(parsedMemos);
+        setMemos(validatedMemos);
       } catch (error) {
         console.error('保存されたメモの解析に失敗しました:', error);
       }
@@ -48,14 +37,21 @@ export const useMemoManager = () => {
    * @param {string} content - 追加するメモの内容
    */
   const handleAddMemo = (content: string) => {
-    const newMemo: Memo = {
-      id: Date.now().toString(),
+    const newMemoData: Memo = {
+      id: uuidv4(),
       content,
       createdAt: new Date().toISOString(),
     };
-    // TODO: zodを使用して新しいメモをバリデーションする
-    // const validatedMemo = MemoSchema.parse(newMemo);
-    setMemos([...memos, newMemo]);
+
+    try {
+      /** zodを使用して新しいメモをバリデーションする */
+      const validatedMemo: Memo = memoSchema.parse(newMemoData);
+      setMemos((prevMemos) => [...prevMemos, validatedMemo]);
+      /** ローカルストレージに保存 */
+      localStorage.setItem('memos', JSON.stringify([...memos, validatedMemo]));
+    } catch (error) {
+      console.error('メモのバリデーションに失敗しました:', error);
+    }
   };
 
   /**
@@ -63,7 +59,10 @@ export const useMemoManager = () => {
    * @param {string} id - 削除するメモのID
    */
   const handleDeleteMemo = (id: string) => {
-    setMemos(memos.filter((memo) => memo.id !== id));
+    const updatedMemos = memos.filter((memo) => memo.id !== id);
+    setMemos(updatedMemos);
+    /** ローカルストレージに削除情報を保存 */
+    localStorage.setItem('memos', JSON.stringify(updatedMemos));
   };
 
   return { memos, handleAddMemo, handleDeleteMemo };
