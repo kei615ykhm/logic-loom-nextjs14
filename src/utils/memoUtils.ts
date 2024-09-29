@@ -1,4 +1,9 @@
-import { memoSchema, Memo, CreateMemoInput } from '../schemas/memoSchema';
+import {
+  memoSchema,
+  Memo,
+  CreateMemoInput,
+  createMemoSchema,
+} from '../schemas/memoSchema';
 
 /**
  * 未知のデータをMemo型に変換する
