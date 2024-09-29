@@ -21,7 +21,6 @@ export function parseMemo(data: unknown): Memo | null {
  * @returns データが有効な場合はCreateMemoInputオブジェクト、そうでない場合はnull
  */
 export function validateCreateMemoInput(data: unknown): CreateMemoInput | null {
-  const createMemoSchema = memoSchema.omit({ id: true, createdAt: true });
   const result = createMemoSchema.safeParse(data);
   return result.success ? result.data : null;
 }
