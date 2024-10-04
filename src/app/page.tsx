@@ -2,7 +2,7 @@
 
 import MemoForm from '../components/memos/MemoForm';
 import { MemoList } from '../components/memos/MemoList';
-import { useMemoManager } from '../hooks/useMemoManager';
+import { useMemoManager } from '../features/memo/useMemoStateManager';
 
 function Home() {
   const { memos, handleAddMemo, handleDeleteMemo } = useMemoManager();
