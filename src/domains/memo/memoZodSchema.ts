@@ -12,13 +12,3 @@ export const memoSchema = z
   .strict(); // 予期しないプロパティを許可しない
 
 export type Memo = z.infer<typeof memoSchema>;
-
-//** メモの作成時のスキーマ */
-export const createMemoSchema = z.object({
-  content: z
-    .string()
-    .min(1, { message: '内容は最低1文字必要です。' })
-    .max(1000, { message: '内容は最大1000文字までです。' }),
-});
-
-export type CreateMemoInput = z.infer<typeof createMemoSchema>;
