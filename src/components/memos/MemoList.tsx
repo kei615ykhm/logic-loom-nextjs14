@@ -1,5 +1,5 @@
 import React from 'react';
-import { Memo } from '../../domains/memo/memoZodSchema';
+import { Memo } from '../../domains/manageMemo/memoZodSchema';
 interface MemoListProps {
   memos: Memo[];
   onDelete: (id: string) => void;
