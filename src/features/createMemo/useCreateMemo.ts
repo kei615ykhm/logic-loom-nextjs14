@@ -15,6 +15,7 @@ export const useCreateMemo = () => {
     try {
       /** zodを使用して新しいメモをバリデーションする */
       const validatedMemo = createMemoSchema.parse(newMemoData);
+      // FIXME: 型の不一致でvalidatedMemoがMemo型にならない
       setMemos((prevMemos) => [...prevMemos, validatedMemo]);
       /** ローカルストレージに保存 */
       localStorage.setItem('memos', JSON.stringify([...memos, validatedMemo]));
