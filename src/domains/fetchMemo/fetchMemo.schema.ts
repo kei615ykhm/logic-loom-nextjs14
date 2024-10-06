@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-//** 基本的なメモスキーマ */
-export const memoSchema = z
+//** データ取得用のメモスキーマ */
+export const fetchMemoSchema = z
   .object({
     id: z.string().uuid({ message: 'IDは有効なUUIDである必要があります。' }),
     content: z.string(),
@@ -11,4 +11,4 @@ export const memoSchema = z
   })
   .strict(); // 予期しないプロパティを許可しない
 
-export type Memo = z.infer<typeof memoSchema>;
+export type Memo = z.infer<typeof fetchMemoSchema>;
