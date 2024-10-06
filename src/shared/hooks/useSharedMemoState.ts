@@ -8,6 +8,7 @@ import {
 export const useSharedMemoState = () => {
   const [memos, setMemos] = useState<Memo[]>([]);
 
+  /** 初回レンダリング時にローカルストレージからメモを取得し、状態を更新する */
   useEffect(() => {
     const storedMemos = localStorage.getItem('memos');
     if (storedMemos) {
