@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Memo, memoSchema } from '../../domains/manageMemo/memoZodSchema';
+import { Memo, memoSchema } from '../../domains/fetchMemo/fetchMemo.schema';
 import { z } from 'zod';
 import { v4 as uuidv4 } from 'uuid';
 
