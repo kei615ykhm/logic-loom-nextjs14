@@ -1,7 +1,7 @@
 'use client';
 
-import MemoForm from '../components/memos/MemoForm';
-import { MemoList } from '../components/memos/MemoList';
+import MemoForm from '../components/shared/MemoForm';
+import { MemoList } from '../components/shared/MemoList';
 import { useCreateMemo } from '../features/createMemo/useCreateMemo';
 import { useDeleteMemo } from '../features/deleteMemo/useDeleteMemo';
 
