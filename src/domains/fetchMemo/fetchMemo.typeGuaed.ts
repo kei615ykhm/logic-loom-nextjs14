@@ -1,4 +1,4 @@
-import { memoSchema, Memo } from './memoZodSchema';
+import { memoSchema, Memo } from './fetchMemo.schema';
 
 /**
  * データがMemo型かどうかを判定する型ガード関数

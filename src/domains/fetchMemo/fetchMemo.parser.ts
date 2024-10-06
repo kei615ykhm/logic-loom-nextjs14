@@ -1,4 +1,4 @@
-import { memoSchema, Memo } from './memoZodSchema';
+import { memoSchema, Memo } from './fetchMemo.schema';
 
 /**
  * 未知のデータをMemo型に変換する

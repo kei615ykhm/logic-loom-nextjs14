@@ -1,4 +1,4 @@
-import { createMemoSchema, CreateMemoInput } from './memoZodSchema';
+import { createMemoSchema, CreateMemoInput } from './fetchMemo.schema';
 
 /**
  * 新しいメモ入力をバリデーションする
